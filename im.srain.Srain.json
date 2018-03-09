@@ -4,10 +4,6 @@
   "runtime-version": "3.26",
   "sdk": "org.gnome.Sdk",
   "command": "srain",
-  "rename-desktop-file": "Srain.desktop",
-  "rename-appdata-file": "Srain.appdata.xml",
-  "rename-icon": "srain",
-  "copy-icon": true,
   "finish-args": [
     "--share=ipc",
     "--filesystem=home:ro",
@@ -119,8 +115,8 @@
       "sources": [
         {
           "type": "git",
-          "url": "https://github.com/SilverRainZ/srain.git",
-          "commit": "6b09b2ee72aee1de476a296fd1483aea3b8796ad"
+          "url": "https://github.com/cpba/srain.git",
+          "commit": "10536d5ad6f339696e71cf1cda83adc400002465"
         }
       ]
     }
