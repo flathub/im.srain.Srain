@@ -115,8 +115,8 @@
       "sources": [
         {
           "type": "git",
-          "url": "https://github.com/cpba/srain.git",
-          "commit": "10536d5ad6f339696e71cf1cda83adc400002465"
+          "url": "https://github.com/SilverRainZ/srain.git",
+          "commit": "e5f4a94cf7d50ea947a09de99ebb52cf656be534"
         }
       ]
     }
