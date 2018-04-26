@@ -12,6 +12,11 @@
     "--socket=wayland",
     "--share=network"
   ],
+  "build-options" : {
+    "cflags": "-fstack-protector-strong -D_FORTIFY_SOURCE=2",
+    "cxxflags": "-fstack-protector-strong -D_FORTIFY_SOURCE=2",
+    "ldflags": "-fstack-protector-strong -Wl,-z,relro,-z,now",
+  },
   "modules": [
     {
       "name": "libconfig",
