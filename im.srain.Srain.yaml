@@ -79,7 +79,6 @@ modules:
 
   - name: srain
     config-opts:
-      - "--prefix=/app"
       - "--config-dir=/app/etc"
     sources:
       - type: git
