@@ -33,8 +33,7 @@ modules:
   - name: requests
     buildsystem: simple
     build-commands:
-      - "/usr/bin/pip3 --disable-pip-version-check install --prefix=/app --no-deps --verbose
-        ."
+      - "/usr/bin/pip3 --disable-pip-version-check install --prefix=/app --no-deps --verbose ."
     sources:
       - type: archive
         url: https://files.pythonhosted.org/packages/source/r/requests/requests-2.18.4.tar.gz
@@ -43,8 +42,7 @@ modules:
   - name: urllib3
     buildsystem: simple
     build-commands:
-      - "/usr/bin/pip3 --disable-pip-version-check install --prefix=/app --no-deps --verbose
-        ."
+      - "/usr/bin/pip3 --disable-pip-version-check install --prefix=/app --no-deps --verbose ."
     sources:
       - type: archive
         url: https://files.pythonhosted.org/packages/source/u/urllib3/urllib3-1.22.tar.gz
@@ -53,8 +51,7 @@ modules:
   - name: chardet
     buildsystem: simple
     build-commands:
-      - "/usr/bin/pip3 --disable-pip-version-check install --prefix=/app --no-deps --verbose
-        ."
+      - "/usr/bin/pip3 --disable-pip-version-check install --prefix=/app --no-deps --verbose ."
     sources:
       - type: archive
         url: https://files.pythonhosted.org/packages/source/c/chardet/chardet-3.0.4.tar.gz
@@ -65,8 +62,7 @@ modules:
   - name: certifi
     buildsystem: simple
     build-commands:
-      - "/usr/bin/pip3 --disable-pip-version-check install --prefix=/app --no-deps --verbose
-        ."
+      - "/usr/bin/pip3 --disable-pip-version-check install --prefix=/app --no-deps --verbose ."
     sources:
       - type: archive
         url: https://files.pythonhosted.org/packages/source/c/certifi/certifi-2017.7.27.1.tar.gz
@@ -75,8 +71,7 @@ modules:
   - name: idna
     buildsystem: simple
     build-commands:
-      - "/usr/bin/pip3 --disable-pip-version-check install --prefix=/app --no-deps --verbose
-        ."
+      - "/usr/bin/pip3 --disable-pip-version-check install --prefix=/app --no-deps --verbose ."
     sources:
       - type: archive
         url: https://files.pythonhosted.org/packages/source/i/idna/idna-2.6.tar.gz
