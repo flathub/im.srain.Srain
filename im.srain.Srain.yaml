@@ -21,7 +21,7 @@ modules:
       - "/include"
       - "*.la"
       - "*.a"
-      - "lib/pkgconfig"
+      - "/lib/pkgconfig"
 
   - name: imagemagick
     sources:
