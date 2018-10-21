@@ -1,7 +1,7 @@
 ---
 app-id: im.srain.Srain
 runtime: org.gnome.Platform
-runtime-version: '3.28'
+runtime-version: '3.30'
 sdk: org.gnome.Sdk
 command: srain
 finish-args:
@@ -11,10 +11,6 @@ finish-args:
   - "--socket=x11"
   - "--socket=wayland"
   - "--share=network"
-build-options:
-  cflags: "-fstack-protector-strong -D_FORTIFY_SOURCE=2"
-  cxxflags: "-fstack-protector-strong -D_FORTIFY_SOURCE=2"
-  ldflags: "-fstack-protector-strong -Wl,-z,relro,-z,now"
 modules:
   - name: libconfig
     sources:
