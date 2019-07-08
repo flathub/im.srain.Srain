@@ -11,6 +11,7 @@ finish-args:
   - "--socket=x11"
   - "--socket=wayland"
   - "--share=network"
+  - "--talk-name=org.freedesktop.secrets"
 modules:
   - name: libconfig
     sources:
