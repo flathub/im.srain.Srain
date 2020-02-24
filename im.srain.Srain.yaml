@@ -32,4 +32,4 @@ modules:
       - type: git
         url: https://github.com/SrainApp/srain.git
         branch: flathub
-        commit: d3acba6b30faa9df8e1f8d0ea3e60b9c670d4782
+        commit: 57e2adeb1572447b14d23f6417d3b376665a6f25
