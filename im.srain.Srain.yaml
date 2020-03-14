@@ -31,5 +31,5 @@ modules:
     sources:
       - type: git
         url: https://github.com/SrainApp/srain.git
-        branch: flathub
-        commit: 57e2adeb1572447b14d23f6417d3b376665a6f25
+        branch: master
+        commit: 01b3761d172ff57a881cbe759b523b33c7bd8fb0
