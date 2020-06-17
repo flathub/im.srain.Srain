@@ -6,7 +6,6 @@ sdk: org.gnome.Sdk
 command: srain
 finish-args:
   - "--share=ipc"
-  - "--filesystem=home:ro"
   - "--socket=pulseaudio"
   - "--socket=x11"
   - "--socket=wayland"
