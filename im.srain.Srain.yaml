@@ -25,10 +25,10 @@ modules:
       - "/lib/pkgconfig"
 
   - name: srain
+    buildsystem: meson
     config-opts:
-      - "--datadir=/app/share"
-      - "--config-dir=/app/etc"
+      - "-Ddoc_builders=[]"
     sources:
       - type: git
         url: https://github.com/SrainApp/srain.git
-        commit: 104e5f93eea50b8753cf51d13e36f8c4569d463f
+        commit: 4cd17fbfd855b654f0f00d6073b0cc0585b3a320
