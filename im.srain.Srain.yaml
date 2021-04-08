@@ -1,7 +1,7 @@
 ---
 app-id: im.srain.Srain
 runtime: org.gnome.Platform
-runtime-version: '3.36'
+runtime-version: '40'
 sdk: org.gnome.Sdk
 command: srain
 finish-args:
