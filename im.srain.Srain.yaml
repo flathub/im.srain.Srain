@@ -29,6 +29,7 @@ modules:
     buildsystem: meson
     config-opts:
       - "-Ddoc_builders=[]"
+      - "--buildtype=release"
     sources:
       - type: git
         url: https://github.com/SrainApp/srain.git
