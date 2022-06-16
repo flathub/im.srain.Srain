@@ -33,4 +33,4 @@ modules:
     sources:
       - type: git
         url: https://github.com/SrainApp/srain.git
-        commit: 9384edbf487d34ede0c84f6c33178390c0e6fe14
+        commit: 0a16d5dc040f7939c1462d13f0d251a9e26e0c81
