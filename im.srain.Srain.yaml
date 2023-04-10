@@ -1,7 +1,7 @@
 ---
 app-id: im.srain.Srain
 runtime: org.gnome.Platform
-runtime-version: '42'
+runtime-version: '43'
 sdk: org.gnome.Sdk
 command: srain
 finish-args:
@@ -33,4 +33,4 @@ modules:
     sources:
       - type: git
         url: https://github.com/SrainApp/srain.git
-        commit: 59a903a6d36f5342d43990444f87f6115fce04c8
+        commit: 46ba1e2690b9e22fcc35f921375b346a0130e05c
