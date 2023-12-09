@@ -14,6 +14,8 @@ finish-args:
   - "--share=network"
   - "--talk-name=org.freedesktop.secrets"
 modules:
+  - shared-modules/libsoup/libsoup-2.4.json
+
   - name: libconfig
     sources:
       - type: archive
