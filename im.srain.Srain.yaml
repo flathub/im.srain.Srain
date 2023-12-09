@@ -1,7 +1,7 @@
 ---
 app-id: im.srain.Srain
 runtime: org.gnome.Platform
-runtime-version: '43'
+runtime-version: '45'
 sdk: org.gnome.Sdk
 command: srain
 finish-args:
@@ -14,6 +14,8 @@ finish-args:
   - "--share=network"
   - "--talk-name=org.freedesktop.secrets"
 modules:
+  - shared-modules/libsoup/libsoup-2.4.json
+
   - name: libconfig
     sources:
       - type: archive
