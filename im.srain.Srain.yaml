@@ -27,6 +27,46 @@ modules:
       - "*.a"
       - "/lib/pkgconfig"
 
+  # https://github.com/flathub/shared-modules/issues/223#issuecomment-1345265868
+  - shared-modules/intltool/intltool-0.51.json
+  - name: ayatana-ido
+    buildsystem: cmake-ninja
+    sources:
+      - type: git
+        url: https://github.com/AyatanaIndicators/ayatana-ido.git
+        tag: 0.9.1
+  - name: libayatana-indicator
+    buildsystem: cmake-ninja
+    sources:
+      - type: git
+        url: https://github.com/AyatanaIndicators/libayatana-indicator.git
+        tag: 0.9.1
+  - name: libdbusmenu-gtk3
+    buildsystem: autotools
+    build-options:
+      cflags: -Wno-error
+    config-opts:
+      - --with-gtk=3
+      - --disable-dumper
+      - --disable-static
+      - --enable-tests
+      - --disable-gtk-doc
+      - --enable-introspection=no
+      - --disable-vala
+    sources:
+      - type: archive
+        url: https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/libdbusmenu-16.04.0.tar.gz
+        sha256: b9cc4a2acd74509435892823607d966d424bd9ad5d0b00938f27240a1bfa878a
+  - name: libayatana-appindicator
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DENABLE_BINDINGS_MONO=NO
+      - -DENABLE_BINDINGS_VALA=NO
+    sources:
+      - type: git
+        url: https://github.com/AyatanaIndicators/libayatana-appindicator.git
+        tag: 0.5.90
+
   - name: srain
     buildsystem: meson
     config-opts:
@@ -35,4 +75,4 @@ modules:
     sources:
       - type: git
         url: https://github.com/SrainApp/srain.git
-        commit: 46ba1e2690b9e22fcc35f921375b346a0130e05c
+        commit: 7d842e21366241c21957d8369826be4e8df677ea
