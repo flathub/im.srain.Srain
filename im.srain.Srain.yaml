@@ -76,3 +76,5 @@ modules:
       - type: git
         url: https://github.com/SrainApp/srain.git
         commit: 7d842e21366241c21957d8369826be4e8df677ea
+      - type: patch
+        path: "fix-appdata.patch"
