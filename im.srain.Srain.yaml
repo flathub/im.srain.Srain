@@ -1,14 +1,13 @@
 ---
 app-id: im.srain.Srain
 runtime: org.gnome.Platform
-runtime-version: '45'
+runtime-version: '47'
 sdk: org.gnome.Sdk
 command: srain
 finish-args:
   - "--share=ipc"
   - "--filesystem=home:ro"
   - "--socket=pulseaudio"
-  - "--socket=x11"
   - "--socket=wayland"
   - "--socket=fallback-x11"
   - "--share=network"
@@ -76,3 +75,5 @@ modules:
       - type: git
         url: https://github.com/SrainApp/srain.git
         commit: 7d842e21366241c21957d8369826be4e8df677ea
+      - type: patch
+        path: "fix-appdata.patch"
