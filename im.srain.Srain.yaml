@@ -1,7 +1,7 @@
 ---
 app-id: im.srain.Srain
 runtime: org.gnome.Platform
-runtime-version: '47'
+runtime-version: '48'
 sdk: org.gnome.Sdk
 command: srain
 finish-args:
@@ -18,8 +18,8 @@ modules:
   - name: libconfig
     sources:
       - type: archive
-        url: https://hyperrealm.github.io/libconfig/dist/libconfig-1.7.2.tar.gz
-        sha256: 7c3c7a9c73ff3302084386e96f903eb62ce06953bb1666235fac74363a16fad9
+        url: https://github.com/hyperrealm/libconfig/releases/download/v1.7.3/libconfig-1.7.3.tar.gz
+        sha256: 545166d6cac037744381d1e9cc5a5405094e7bfad16a411699bcff40bbb31ee7
     cleanup:
       - "/include"
       - "*.la"
@@ -74,6 +74,4 @@ modules:
     sources:
       - type: git
         url: https://github.com/SrainApp/srain.git
-        commit: 7d842e21366241c21957d8369826be4e8df677ea
-      - type: patch
-        path: "fix-appdata.patch"
+        tag: 1.8.1
