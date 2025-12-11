@@ -43,13 +43,13 @@ modules:
     sources:
       - type: git
         url: https://github.com/AyatanaIndicators/ayatana-ido.git
-        tag: 0.9.1
+        tag: 0.10.4
   - name: libayatana-indicator
     buildsystem: cmake-ninja
     sources:
       - type: git
         url: https://github.com/AyatanaIndicators/libayatana-indicator.git
-        tag: 0.9.1
+        tag: 0.9.4
   - name: libdbusmenu-gtk3
     buildsystem: autotools
     build-options:
@@ -74,7 +74,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/AyatanaIndicators/libayatana-appindicator.git
-        tag: 0.5.90
+        tag: 0.5.92
 
   - name: srain
     buildsystem: meson
