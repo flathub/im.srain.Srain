@@ -12,6 +12,16 @@ finish-args:
   - "--socket=fallback-x11"
   - "--share=network"
   - "--talk-name=org.freedesktop.secrets"
+cleanup:
+  - "/include"
+  - "/lib/cmake"
+  - "/lib/girepository-1.0"
+  - "/lib/pkgconfig"
+  - "/share/doc"
+  - "/share/gir-1.0"
+  - "/share/gtk-doc"
+  - "/share/vala"
+
 modules:
   - shared-modules/libsoup/libsoup-2.4.json
 
