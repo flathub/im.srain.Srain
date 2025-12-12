@@ -23,7 +23,19 @@ cleanup:
   - "/share/vala"
 
 modules:
-  - shared-modules/libsoup/libsoup-2.4.json
+  - name: libsoup
+    buildsystem: meson
+    builddir: true
+    config-opts:
+      - "--buildtype=release"
+      - "-Dvapi=enabled"
+      - "-Dtests=false"
+      - "-Dgssapi=disabled"
+      - "-Dsysprof=disabled"
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/libsoup/3.6/libsoup-3.6.5.tar.xz
+        sha256: 6891765aac3e949017945c3eaebd8cc8216df772456dc9f460976fbdb7ada234
 
   - name: libconfig
     sources:
