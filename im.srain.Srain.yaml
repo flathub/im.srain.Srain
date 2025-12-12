@@ -1,7 +1,7 @@
 ---
 app-id: im.srain.Srain
 runtime: org.gnome.Platform
-runtime-version: '47'
+runtime-version: '49'
 sdk: org.gnome.Sdk
 command: srain
 finish-args:
@@ -12,19 +12,39 @@ finish-args:
   - "--socket=fallback-x11"
   - "--share=network"
   - "--talk-name=org.freedesktop.secrets"
-modules:
-  - shared-modules/libsoup/libsoup-2.4.json
+cleanup:
+  - "/include"
+  - "/lib/cmake"
+  - "/lib/girepository-1.0"
+  - "/lib/pkgconfig"
+  - "/share/doc"
+  - "/share/gir-1.0"
+  - "/share/gtk-doc"
+  - "/share/vala"
 
-  - name: libconfig
+modules:
+  - name: libsoup
+    buildsystem: meson
+    builddir: true
+    config-opts:
+      - "--buildtype=release"
+      - "-Dvapi=enabled"
+      - "-Dtests=false"
+      - "-Dgssapi=disabled"
+      - "-Dsysprof=disabled"
     sources:
       - type: archive
-        url: https://hyperrealm.github.io/libconfig/dist/libconfig-1.7.2.tar.gz
-        sha256: 7c3c7a9c73ff3302084386e96f903eb62ce06953bb1666235fac74363a16fad9
-    cleanup:
-      - "/include"
-      - "*.la"
-      - "*.a"
-      - "/lib/pkgconfig"
+        url: https://download.gnome.org/sources/libsoup/3.6/libsoup-3.6.5.tar.xz
+        sha256: 6891765aac3e949017945c3eaebd8cc8216df772456dc9f460976fbdb7ada234
+
+  - name: libconfig
+    buildsystem: autotools
+    config-opts:
+      - --disable-static
+    sources:
+      - type: archive
+        url: https://hyperrealm.github.io/libconfig/dist/libconfig-1.8.1.tar.gz
+        sha256: c73ee3d914ec68c99b61e864832931e9a7112eeabfb449dad217fd83e385cbdf
 
   # https://github.com/flathub/shared-modules/issues/223#issuecomment-1345265868
   - shared-modules/intltool/intltool-0.51.json
@@ -33,13 +53,13 @@ modules:
     sources:
       - type: git
         url: https://github.com/AyatanaIndicators/ayatana-ido.git
-        tag: 0.9.1
+        tag: 0.10.4
   - name: libayatana-indicator
     buildsystem: cmake-ninja
     sources:
       - type: git
         url: https://github.com/AyatanaIndicators/libayatana-indicator.git
-        tag: 0.9.1
+        tag: 0.9.4
   - name: libdbusmenu-gtk3
     buildsystem: autotools
     build-options:
@@ -64,7 +84,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/AyatanaIndicators/libayatana-appindicator.git
-        tag: 0.5.90
+        tag: 0.5.92
 
   - name: srain
     buildsystem: meson
@@ -74,6 +94,4 @@ modules:
     sources:
       - type: git
         url: https://github.com/SrainApp/srain.git
-        commit: 7d842e21366241c21957d8369826be4e8df677ea
-      - type: patch
-        path: "fix-appdata.patch"
+        tag: 1.8.1
