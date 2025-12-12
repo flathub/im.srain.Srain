@@ -1,7 +1,7 @@
 ---
 app-id: im.srain.Srain
 runtime: org.gnome.Platform
-runtime-version: '48'
+runtime-version: '49'
 sdk: org.gnome.Sdk
 command: srain
 finish-args:
@@ -38,15 +38,13 @@ modules:
         sha256: 6891765aac3e949017945c3eaebd8cc8216df772456dc9f460976fbdb7ada234
 
   - name: libconfig
+    buildsystem: autotools
+    config-opts:
+      - --disable-static
     sources:
       - type: archive
-        url: https://github.com/hyperrealm/libconfig/releases/download/v1.7.3/libconfig-1.7.3.tar.gz
-        sha256: 545166d6cac037744381d1e9cc5a5405094e7bfad16a411699bcff40bbb31ee7
-    cleanup:
-      - "/include"
-      - "*.la"
-      - "*.a"
-      - "/lib/pkgconfig"
+        url: https://hyperrealm.github.io/libconfig/dist/libconfig-1.8.1.tar.gz
+        sha256: c73ee3d914ec68c99b61e864832931e9a7112eeabfb449dad217fd83e385cbdf
 
   # https://github.com/flathub/shared-modules/issues/223#issuecomment-1345265868
   - shared-modules/intltool/intltool-0.51.json
