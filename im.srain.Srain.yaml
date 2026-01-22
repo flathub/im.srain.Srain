@@ -1,5 +1,4 @@
----
-app-id: im.srain.Srain
+id: im.srain.Srain
 runtime: org.gnome.Platform
 runtime-version: '49'
 sdk: org.gnome.Sdk
@@ -23,19 +22,6 @@ cleanup:
   - "/share/vala"
 
 modules:
-  - name: libsoup
-    buildsystem: meson
-    builddir: true
-    config-opts:
-      - "--buildtype=release"
-      - "-Dvapi=enabled"
-      - "-Dtests=false"
-      - "-Dgssapi=disabled"
-      - "-Dsysprof=disabled"
-    sources:
-      - type: archive
-        url: https://download.gnome.org/sources/libsoup/3.6/libsoup-3.6.5.tar.xz
-        sha256: 6891765aac3e949017945c3eaebd8cc8216df772456dc9f460976fbdb7ada234
 
   - name: libconfig
     buildsystem: autotools
@@ -54,12 +40,14 @@ modules:
       - type: git
         url: https://github.com/AyatanaIndicators/ayatana-ido.git
         tag: 0.10.4
+
   - name: libayatana-indicator
     buildsystem: cmake-ninja
     sources:
       - type: git
         url: https://github.com/AyatanaIndicators/libayatana-indicator.git
         tag: 0.9.4
+
   - name: libdbusmenu-gtk3
     buildsystem: autotools
     build-options:
@@ -76,6 +64,7 @@ modules:
       - type: archive
         url: https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/libdbusmenu-16.04.0.tar.gz
         sha256: b9cc4a2acd74509435892823607d966d424bd9ad5d0b00938f27240a1bfa878a
+
   - name: libayatana-appindicator
     buildsystem: cmake-ninja
     config-opts:
