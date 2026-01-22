@@ -1,6 +1,6 @@
 # Srain
 
-___Modern IRC___
+___Modern IRC client___
 
 Modern IRC client written in GTK
 
@@ -24,4 +24,4 @@ flatpak run org.flatpak.Builder build-dir --user --ccache --force-clean --instal
 
 ---
 
-**Technologies**: GNOME, GTK4, C
+**Technologies**: GNOME, GTK3, C
