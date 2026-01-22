@@ -40,6 +40,7 @@ modules:
       - type: git
         url: https://github.com/AyatanaIndicators/ayatana-ido.git
         tag: 0.10.4
+        commit: f968079b09e2310fefc3fc307359025f1c74b3eb
 
   - name: libayatana-indicator
     buildsystem: cmake-ninja
@@ -47,6 +48,7 @@ modules:
       - type: git
         url: https://github.com/AyatanaIndicators/libayatana-indicator.git
         tag: 0.9.4
+        commit: 611bb384b73fa6311777ba4c41381a06f5b99dad
 
   - name: libdbusmenu-gtk3
     buildsystem: autotools
@@ -74,6 +76,7 @@ modules:
       - type: git
         url: https://github.com/AyatanaIndicators/libayatana-appindicator.git
         tag: 0.5.92
+        commit: d214fe3e7a6b1ba8faea68d70586310b34dc643c
 
   - name: srain
     buildsystem: meson
@@ -84,3 +87,4 @@ modules:
       - type: git
         url: https://github.com/SrainApp/srain.git
         tag: 1.8.1
+        commit: 693c81b11052b6e287b5a734352dd813ef2b71aa
