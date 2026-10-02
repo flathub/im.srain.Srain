@@ -1,27 +1,27 @@
 id: im.srain.Srain
-runtime: org.gnome.Platform
-runtime-version: '49'
-sdk: org.gnome.Sdk
+runtime: org.freedesktop.Platform
+runtime-version: '26.08'
+sdk: org.freedesktop.Sdk
 command: srain
 finish-args:
-  - "--share=ipc"
-  - "--filesystem=home:ro"
-  - "--socket=pulseaudio"
-  - "--socket=wayland"
-  - "--socket=fallback-x11"
-  - "--share=network"
-  - "--talk-name=org.freedesktop.secrets"
+  - --share=ipc
+  - --filesystem=home:ro
+  - --socket=pulseaudio
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=network
+  - --talk-name=org.freedesktop.secrets
 cleanup:
-  - "/include"
-  - "/lib/cmake"
-  - "/lib/girepository-1.0"
-  - "/lib/pkgconfig"
-  - "/share/doc"
-  - "/share/gir-1.0"
-  - "/share/gtk-doc"
-  - "/share/vala"
-
+  - /include
+  - /lib/cmake
+  - /lib/girepository-1.0
+  - /lib/pkgconfig
+  - /share/gir-1.0
+  - /share/vala
+  - '*.la'
 modules:
+
+  - shared-modules/libayatana-appindicator/libayatana-appindicator-gtk3.json
 
   - name: libconfig
     buildsystem: autotools
@@ -32,57 +32,11 @@ modules:
         url: https://hyperrealm.github.io/libconfig/dist/libconfig-1.8.1.tar.gz
         sha256: c73ee3d914ec68c99b61e864832931e9a7112eeabfb449dad217fd83e385cbdf
 
-  # https://github.com/flathub/shared-modules/issues/223#issuecomment-1345265868
-  - shared-modules/intltool/intltool-0.51.json
-  - name: ayatana-ido
-    buildsystem: cmake-ninja
-    sources:
-      - type: git
-        url: https://github.com/AyatanaIndicators/ayatana-ido.git
-        tag: 0.10.4
-        commit: f968079b09e2310fefc3fc307359025f1c74b3eb
-
-  - name: libayatana-indicator
-    buildsystem: cmake-ninja
-    sources:
-      - type: git
-        url: https://github.com/AyatanaIndicators/libayatana-indicator.git
-        tag: 0.9.4
-        commit: 611bb384b73fa6311777ba4c41381a06f5b99dad
-
-  - name: libdbusmenu-gtk3
-    buildsystem: autotools
-    build-options:
-      cflags: -Wno-error
-    config-opts:
-      - --with-gtk=3
-      - --disable-dumper
-      - --disable-static
-      - --enable-tests
-      - --disable-gtk-doc
-      - --enable-introspection=no
-      - --disable-vala
-    sources:
-      - type: archive
-        url: https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/libdbusmenu-16.04.0.tar.gz
-        sha256: b9cc4a2acd74509435892823607d966d424bd9ad5d0b00938f27240a1bfa878a
-
-  - name: libayatana-appindicator
-    buildsystem: cmake-ninja
-    config-opts:
-      - -DENABLE_BINDINGS_MONO=NO
-      - -DENABLE_BINDINGS_VALA=NO
-    sources:
-      - type: git
-        url: https://github.com/AyatanaIndicators/libayatana-appindicator.git
-        tag: 0.5.92
-        commit: d214fe3e7a6b1ba8faea68d70586310b34dc643c
-
   - name: srain
     buildsystem: meson
     config-opts:
-      - "-Ddoc_builders=[]"
-      - "--buildtype=release"
+      - -Ddoc_builders=[]
+      - --buildtype=release
     sources:
       - type: git
         url: https://github.com/SrainApp/srain.git
